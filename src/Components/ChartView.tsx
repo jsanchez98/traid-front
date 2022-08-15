@@ -9,6 +9,7 @@ interface ConfigType {
 
 interface PropType {
   data: [number, number][];
+  loading: boolean;
 }
 
 function ChartView(props: PropType) {
@@ -74,16 +75,26 @@ function ChartView(props: PropType) {
     ],
   });
 
+  useEffect(() => {
+    setConfig({...config, series: [{data: props.data}]})
+  }, [props.data])
 
   return (
-    <div>
+    <>
+      <div
+        id="loading-overlay"
+        className={
+          props.loading ? "loading-overlay-active" : "loading-overlay-inactive"
+        }
+      ></div>
+      loading: {props.loading ? <h3>loading</h3> : <h3>not loading</h3>}
       <ReactApexChart
         options={config.options}
         series={config.series}
         type="area"
         width="1000"
       />
-    </div>
+    </>
   );
 }
 

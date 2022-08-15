@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.0",
     "@stomp/stompjs": "^6.1.2",
     "@types/sockjs-client": "^1.5.1",
     "apexcharts": "^3.35.4",
