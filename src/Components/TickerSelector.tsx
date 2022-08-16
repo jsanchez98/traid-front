@@ -34,13 +34,14 @@ function TickerSelector(props: InputProps) {
   return tickeroptions.length == 0 ? (
     <div> not loaded tickers </div>
   ) : (
-    <div>
+    <div className="ticker-search">
       <Autocomplete
         isOptionEqualToValue={(option, value) => option.label === value.label}
         value={value}
         onChange={(event:any, newValue:{ label: string } | null) => {
           setValue(newValue)
         }}
+        style={{"backgroundColor": "white"}}
         disablePortal
         id="combobox-tickers"
         options={tickeroptions}

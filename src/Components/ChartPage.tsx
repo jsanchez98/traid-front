@@ -8,19 +8,17 @@ function ChartPage() {
   const [datapoints, setDatapoints] = useState<Datapoint[]>();
   const [timeseries, setTimeseries] = useState<[number, number][]>([]);
   const [allTickers, setAllTickers] = useState<Ticker[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (!loading) {
-      fetchDatapoints(ticker);
-      fetchTickers();
-    }
+    fetchDatapoints(ticker);
+    fetchTickers();
   }, []);
 
   function getNameFromTicker(ticker: string): string {
-    const name = allTickers.find(entity => entity.ticker === ticker)?.name
-    if(name == null){
-      return "Name not found"
+    const name = allTickers.find((entity) => entity.ticker === ticker)?.name;
+    if (name == null) {
+      return "Name not found";
     }
     return name;
   }
@@ -62,11 +60,14 @@ function ChartPage() {
     <div style={{ display: "flex" }}>
       {timeseries.length == 0 ? (
         <div className="chart-frame">
-        <h3> no API data available</h3>
+          <h3> no API data available</h3>
         </div>
       ) : (
-        <div className="chart-frame">
-        <ChartView data={timeseries} loading={loading} />
+        <div>
+          <div id="date-range"></div>
+          <div className="chart-frame">
+            <ChartView data={timeseries} loading={loading} />
+          </div>
         </div>
       )}
       <div>

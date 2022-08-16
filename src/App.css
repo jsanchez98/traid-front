@@ -27,7 +27,12 @@
 }
 
 #background {
-  display: flex
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left:0;
+  background-color: rgb(0, 14, 61);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -72,6 +77,21 @@
 
 #company-info-div {
   margin-left: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.ticker-search {
+  margin: 10px 50px 10px 10px;
+  border-radius: 5px;
+  border-color: #646cff;
+  border-width: 2px;
+  border-style: solid;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #open-menu-button {
@@ -85,7 +105,7 @@
   top: 0px;
   left: 0px;
   width: 200px;
-  background-color: rgb(29, 126, 126);
+  background-color: rgb(0, 14, 61);
   animation: menu-move 0.5s;
 }
 
@@ -98,6 +118,8 @@
   width: 180px;
   height: 50px;
   margin-bottom: 5px;
+  background-color: rgb(0, 14, 61);
+  color: rgb(255, 255, 255);
   animation: menu-buttons-move 0.5s;
 }
 
@@ -107,5 +129,24 @@
 }
 
 .chart-frame {
-  width: 1100px;
+  margin: 20px;
+  background-color: rgb(255, 255, 255);
+  width: 750px;
+  height: 500px;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  align-items: center;
+  display:flex;
+}
+
+#date-range {
+  height: 200px;
+  width: 96%;
+  margin: 10px;
+  border-radius: 5px;
+  border-color: #646cff;
+  border-width: 2px;
+  border-style: solid;
 }

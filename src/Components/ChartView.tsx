@@ -87,12 +87,11 @@ function ChartView(props: PropType) {
           props.loading ? "loading-overlay-active" : "loading-overlay-inactive"
         }
       ></div>
-      loading: {props.loading ? <h3>loading</h3> : <h3>not loading</h3>}
       <ReactApexChart
         options={config.options}
         series={config.series}
         type="area"
-        width="1000"
+        width="700"
       />
     </>
   );
